@@ -1,0 +1,103 @@
+/* Base styles and visual polish for Fractal Estudios
+	 - Fuente: Roboto (Google Fonts)
+	 - Se usa Tailwind CDN para utilidades; aquí añadimos overrides, variables y pequeños componentes.
+*/
+
+:root{
+	--accent: #0f172a; /* slate-900 */
+	--muted: #64748b; /* slate-500 */
+	--glass: rgba(255,255,255,0.72);
+	--brand: linear-gradient(90deg,#06b6d4 0%, #6366f1 100%);
+}
+
+/* Global reset / base */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+	margin:0;
+	font-family: 'Roboto', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+	background: linear-gradient(180deg, #f8fafc 0%, #eef2ff 100%);
+	color:var(--accent);
+	-webkit-font-smoothing:antialiased;
+	-moz-osx-font-smoothing:grayscale;
+}
+
+a{color:inherit;text-decoration:none}
+img{max-width:100%;height:auto;display:block}
+
+/* Header */
+header{backdrop-filter: blur(6px);}
+header .h-8{font-family:inherit}
+
+/* Buttons / links with rounded-xl */
+a.rounded-xl{
+	display:inline-block;
+	transition:transform .15s ease, box-shadow .15s ease, opacity .12s ease;
+}
+a.rounded-xl:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(15,23,42,.12)}
+
+.bg-slate-900{background-color:#0f172a}
+.text-white{color:#fff}
+
+/* Primary CTA variation */
+.rounded-xl.bg-slate-900.text-white{
+	background:var(--brand);
+	background-size:200% 200%;
+	box-shadow:0 8px 30px rgba(99,102,241,0.12);
+}
+
+/* Outline buttons */
+.rounded-xl.border{border:1px solid rgba(15,23,42,.06)}
+
+/* Hero styles */
+.aspect-video{aspect-ratio:16/9}
+.grid.place-content-center{display:grid;place-items:center}
+.border{border:1px solid rgba(2,6,23,.06)}
+.rounded-2xl{border-radius:16px}
+
+.text-slate-600{color:#475569}
+.text-slate-500{color:#6b7280}
+.text-slate-300{color:#c7d2fe}
+
+/* Cards */
+.p-6{padding:1.5rem}
+.mt-6{margin-top:1.5rem}
+.mt-4{margin-top:1rem}
+.mt-3{margin-top:.75rem}
+.mt-2{margin-top:.5rem}
+
+/* Small utilities used from markup that Tailwind covers when CDN is present; these are light fallbacks */
+.max-w-6xl{max-width:72rem;margin-left:auto;margin-right:auto}
+.px-4{padding-left:1rem;padding-right:1rem}
+.py-20{padding-top:5rem;padding-bottom:5rem}
+.py-16{padding-top:4rem;padding-bottom:4rem}
+.py-10{padding-top:2.5rem;padding-bottom:2.5rem}
+.px-5{padding-left:1.25rem;padding-right:1.25rem}
+.py-3{padding-top:.75rem;padding-bottom:.75rem}
+
+/* Footer */
+footer{background:transparent}
+
+/* Minor typography tweaks */
+h1{line-height:1.05}
+h1,h2,h3{color:var(--accent)}
+
+/* Small responsive niceties */
+@media (max-width:768px){
+	.md\:flex{display:flex}
+	.md\:pl-12{padding-left:3rem}
+	.hidden{display:none}
+}
+
+/* Make details blocks more clickable */
+details{cursor:pointer}
+
+/* Decorative accent for hero underline */
+.underline{position:relative}
+.underline::after{content:"";position:absolute;left:0;right:0;bottom:0;height:8px;background:linear-gradient(90deg,#fde68a, #fb7185);opacity:.25;border-radius:6px}
+
+/* small accessibility: focus styles */
+a:focus{outline:3px solid rgba(99,102,241,0.18);outline-offset:3px}
+
+/* End of custom styles */
+
